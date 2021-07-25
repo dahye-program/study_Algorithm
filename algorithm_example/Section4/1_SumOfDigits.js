@@ -10,7 +10,6 @@ const solution = (n, arr) => {
             if(x>answer) answer=x;
         }
     }
-
     return answer;
 }
 
