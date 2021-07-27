@@ -1,3 +1,5 @@
+// 각 자리수의 합을 구하고, 합이 최대인 자연수 출력
+
 const solution = (n, arr) => {
     let answer, max=Number.MIN_SAFE_INTEGER;
     for(let x of arr){
