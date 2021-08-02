@@ -2,7 +2,7 @@
 
 const isPrime = (num) => {
     if(num===1) return false;
-    for(let i=2; i<=parseInt(Math.sqrt(num)); i++){
+    for(let i=2; i<=parseInt(Math.sqrt(num)); i++){ // 제곱근까지
         if(num%i===0) return false;
     }
     return true;
@@ -13,10 +13,12 @@ const solution = (arr) => {
     for(let x of arr){
         let res=0;
         while(x){
-            let t=x%10; // 일의자리수
-            res=res*10+t; //
+            let t=x%10;
+            res=res*10+t;
             x=parseInt(x/10);
         }
+        
+        // let res=Number(x.toString().split('').reverse().join(''));
         if(isPrime(res)) answer.push(res);
     }
     return answer;
