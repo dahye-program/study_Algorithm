@@ -4,12 +4,14 @@
 
 const result = (arr, commands) => {
     let ans = [];
+    let array = [];
 
-    for(let i=0; i<=commands.length-1; i++){
+    for(let i=0; i<commands.length-1; i++){
         for(let j=0; j<=0; j++){
-            arr = arr.slice((commands[i][j]-1), commands[i][j+1]);
-            arr.sort((a,b)=> a-b);
-            ans.push(arr[(commands[i][j+2])-1]);
+            array = arr.slice((commands[i][j]-1), (commands[i][j+1]+1));
+            console.log(array);
+            array=array.sort();
+            ans.push(array[(commands[i][j+2])-1]);
         }
     }
     return ans;
