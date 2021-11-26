@@ -6,11 +6,10 @@ const result = (arr, commands) => {
     let ans = [];
     let array = [];
 
-    for(let i=0; i<commands.length-1; i++){
+    for(let i=0; i<commands.length; i++){
         for(let j=0; j<=0; j++){
-            array = arr.slice((commands[i][j]-1), (commands[i][j+1]+1));
-            console.log(array);
-            array=array.sort();
+            array = arr.slice((commands[i][j]-1), (commands[i][j+1]));
+            array.sort();
             ans.push(array[(commands[i][j+2])-1]);
         }
     }
@@ -19,4 +18,3 @@ const result = (arr, commands) => {
 
 const arr = [1, 5, 2, 6, 3, 7, 4]
 const commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]];
-console.log(result(arr, commands));
