@@ -2,19 +2,14 @@
 // ex) arr=[1, 5, 2, 6, 3, 7, 4], i=2, j=5, k=3 => 5 리턴
 // 입력값 배열, i/j/k 담긴 2차원 배열
 
-const result = (arr, commands) => {
+const solution = (arr, commands) => {
     let ans = [];
-    let array = [];
+    let tmp = [];
 
     for(let i=0; i<commands.length; i++){
-        for(let j=0; j<=0; j++){
-            array = arr.slice((commands[i][j]-1), (commands[i][j+1]));
-            array.sort();
-            ans.push(array[(commands[i][j+2])-1]);
-        }
+        tmp = arr.slice((commands[i][0]-1), (commands[i][1]));
+        tmp.sort((a,b) => a-b);
+        ans.push(tmp[(commands[i][2])-1]);
     }
     return ans;
 }
-
-const arr = [1, 5, 2, 6, 3, 7, 4]
-const commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]];
